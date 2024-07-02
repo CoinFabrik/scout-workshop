@@ -15,7 +15,7 @@ jobs:
       - name: do scout
         uses: coinfabrik/scout-actions@v2.4
         with:
-          target: 'examples/examole-1/'
+          target: 'examples/example-1/'
           markdown_output: "true"
 
       - uses: mshick/add-pr-comment@v2.8.2
