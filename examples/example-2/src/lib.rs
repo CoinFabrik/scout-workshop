@@ -62,13 +62,9 @@ impl MyStruct {
         if Self::vote_ended(env.clone()) {
             return Err(URError::VoteEnded);
         }
-        if state.already_voted.contains_key(caller.clone()) {
-            Err(URError::AccountAlreadyVoted)
-        } else {
-            state.candidates.push_back(candidate.clone());
-            state.votes.set(candidate, 0);
-            Ok(())
-        }
+        state.candidates.push_back(candidate.clone());
+        state.votes.set(candidate, 0);
+        Ok(())
     }
 
     pub fn get_votes_for_a_candidate(env: Env, candidate: Address) -> Result<u64, URError> {
