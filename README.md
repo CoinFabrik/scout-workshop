@@ -32,33 +32,7 @@ For more details, please visit the [Workshop Landing Page](https://www.coinfabri
 
 #### CLI
 
-Make sure that [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) is installed on your computer. Then, follow these 5 simple steps:
-
-**1. Install Rust Nightly Toolchain:**
-
-```bash
-rustup toolchain install nightly-2023-12-16
-```
-
-**2. Set Default Nightly Toolchain:**
-
-```bash
-rustup default nightly-2023-12-16
-```
-
-**3. Add rust-src Component:**
-
-```bash
-rustup component add rust-src --toolchain nightly-2023-12-16
-```
-
-**4. Install additional tools required by Scout:**
-
-```bash
-cargo install cargo-dylint dylint-link mdbook
-```
-
-**5. Install Scout Audit:**
+Make sure that [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) is installed on your computer. Then, follow install scout with the following command.
 
 ```bash
 cargo install cargo-scout-audit
