@@ -118,10 +118,13 @@ Identify the path to the smart contract you want to be analyzed and create a `.y
 
 ```yml
 name: scout-workflow
-on: [push]
+on:
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  run-scout:
+  scout-audit:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
@@ -129,13 +132,12 @@ jobs:
       repository-projects: write
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: do scout
-        uses: coinfabrik/scout-actions@v2.4
+        uses: coinfabrik/scout-actions@v3
         with:
-          target: 'path_to_smart_contract/'
-          markdown_output: "true"
+          target: ''
 
       - uses: mshick/add-pr-comment@v2.8.2
         with:
